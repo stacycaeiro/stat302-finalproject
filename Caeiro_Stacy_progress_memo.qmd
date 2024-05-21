@@ -1,0 +1,62 @@
+---
+title: "Progress Memo"
+subtitle: |
+  | Final Project 
+  | Data Visualization (STAT 302)
+author: "Stacy Caeiro"
+pagetitle: "Stacy Caeiro Progress Memo"
+date: today
+
+format:
+  html:
+    toc: true
+    toc-location: left
+    embed-resources: true
+    link-external-newwindow: true
+    code-fold: true
+    fig-dpi: 300
+
+execute:
+  warning: false
+
+from: markdown+emoji 
+reference-location: margin
+citation-location: margin
+---
+## Brainstorm 
+
+Inspiration: 
+- https://www.appsilon.com/post/r-shiny-for-good-project-examples#respiratory 
+- https://whoequity.shinyapps.io/heat/#
+- https://worldhappiness.report/data/ 
+
+Features:
+- selectInput() for country
+- selectInput() for indicator
+- selectInput() for demographic (age, race, economic status)
+- boxplot 
+
+Dataset: 
+- 
+
+
+## Data source
+
+Response here.
+
+## Basic data description
+
+Response here.
+
+## Why this data
+
+Response here.
+
+## Visualization plan
+
+Response here.
+
+## Misc
+
+Response here.
+
