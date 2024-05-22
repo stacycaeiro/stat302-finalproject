@@ -23,40 +23,40 @@ from: markdown+emoji
 reference-location: margin
 citation-location: margin
 ---
-## Brainstorm 
-
-Inspiration: 
-- https://www.appsilon.com/post/r-shiny-for-good-project-examples#respiratory 
-- https://whoequity.shinyapps.io/heat/#
-- https://worldhappiness.report/data/ 
-
-Features:
-- selectInput() for country
-- selectInput() for indicator
-- selectInput() for demographic (age, race, economic status)
-- boxplot 
-
-Dataset: 
-- 
-
 
 ## Data source
+For my project, I will be using the [Global Country Information Dataset 2023](https://www.kaggle.com/datasets/nelgiriyewithana/countries-of-the-world-2023) from [Kaggle](https://www.kaggle.com/). This dataset provides statistics on economic, demographic, environmental, educational and health indicators for all countries in the world.
 
-Response here.
 
 ## Basic data description
 
-Response here.
+```{r}
+#| label: data-slice
+library(tidyverse)
+
+world_data <- read_csv("data/world-data-2023.csv")
+
+world_data |> 
+  slice_head(n = 5)
+```
+
+This dataset contains 195 observations and 35 variables. Most of the dataset is 
+numeric, as there are 8 character variables and 27 numeric variables. Furthermore, 
+most variables have between 1-26 missing values. The exceptions are population density 
+and country, which have no missing values, and minimum wage, which has 45 missing 
+values. 
 
 ## Why this data
 
-Response here.
+I chose this data because I am interested in analyzing the relationships between social/economic indicators and health outcomes. This dataset contains health outcomes such as maternal mortality ratio and infant life expectancy, as well as social indicators such as GDP, minimum wage, and out of pocket health expenditure. I am curious to see if there are any social factors that are correlated with better health outcomes. I am particularly curious to study this because I know that the United States has one of the highest out of pocket health expenditures worldwide, yet one of the worst maternal mortality ratios out of all developed countries. Therefore, I am curious to explore:
+
+1) Is increased out of pocket health expenditures associated with better health outcomes worldwide? I wonder if it is and the US is just an exception, or if the absence of a positive relationship is seen on a global scale. 
+2) What social indicators are correlated with better health outcomes? 
 
 ## Visualization plan
 
-Response here.
+I am going to build a dashboard using Shiny. The main plot will be a scatterplot with two variables, as most of the data in my dataset is numeric. I will also have 3 select input features: one to choose which country the user wants to see data for, one to choose the x variable (which I will set to social indicators), and one to choose the y variable (which I will set to health outcomes). 
 
-## Misc
-
-Response here.
+For the x variable I will have the options CO2 emissions, GDP, out of pocket health expenditure, physicians per thousand, and unemployment rate. I have selected these variables because I think these will most directly correlate with better health outcomes. 
+For the y variable, I will have the options birth rate, fertility rate, infant mortality, and maternal mortality ratio.
 
