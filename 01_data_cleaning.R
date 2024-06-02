@@ -3,6 +3,7 @@
 # load packages 
 library(tidyverse)
 library(here)
+library(stringr)
 
 # load data 
 
@@ -28,13 +29,14 @@ world_data <- read_csv(here("data/world-data-2023.csv")) |>
     total_tax_rate = str_remove(total_tax_rate, "%") 
     |> as.numeric(),
     unemployment_rate = str_remove(unemployment_rate, "%") 
-    |> as.numeric()#,
-    #minimum_wage = str_remove(minimum_wage, "$") |> as.numeric()
+    |> as.numeric(),
+    gdp = str_remove_all(gdp, "[$,]") |> as.numeric(),
+    minimum_wage = str_remove(minimum_wage, "$")
   )
-
-    
 
 world_data |> 
   skimr::skim_without_charts()
 
 naniar::gg_miss_var(world_data) 
+
+write_rds(world_data, file = "data/world_data.rds")
