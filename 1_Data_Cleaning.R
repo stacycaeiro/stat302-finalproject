@@ -1,3 +1,6 @@
+## STAT 302 Final Project 
+## Data cleaning
+
 ## load libraries 
 library(tidyverse)
 
