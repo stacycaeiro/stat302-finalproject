@@ -31,7 +31,7 @@ world_data <- read_csv(here("data/world-data-2023.csv")) |>
     unemployment_rate = str_remove(unemployment_rate, "%") 
     |> as.numeric(),
     gdp = str_remove_all(gdp, "[$,]") |> as.numeric(),
-    minimum_wage = str_remove(minimum_wage, "$")
+    minimum_wage = str_remove_all(minimum_wage, "[$]") |> as.numeric()
   )
 
 world_data |> 
