@@ -1,6 +1,5 @@
 ## load libraries 
 library(tidyverse)
-library(janitor)
 
 ## load datasets 
 holc_raw <- read_csv("data/raw/HOLC_2020_census_tracts.csv")
@@ -11,7 +10,7 @@ health_raw <- read_csv("data/raw/chicago_health_atlas_final.csv")
 #citation. So I am creating a new csv of just the first three rows to use as a codebook. 
 
 health_codebook <- health_raw[0:3,] |>
-  clean_names()
+  janitor::clean_names()
 
 write_csv(health_codebook, "data/chicago_health_atlas_codebook_final.csv")
 
@@ -19,11 +18,8 @@ write_csv(health_codebook, "data/chicago_health_atlas_codebook_final.csv")
 health_clean <- health_raw |>
   #filter out first 4 rows because its text defintions
   slice(-c(0:4)) |>
-  #convert all numeric values from char to numeric variables
   mutate_at(vars(-Layer, -Name), as.numeric) |>
-  #clean names so they can be used in code
   clean_names() |>
-  #deselect variables because irrelevant to analysis
   select(-c(layer, name))
 
 holc_clean <- holc_raw |>
