@@ -1,0 +1,27 @@
+---
+title: "L07 Ensemble Models"
+subtitle: "Data Science 3 with R (STAT 301-3)"
+author: "Stacy Caeiro"
+pagetitle: "L07 Stacy Caeiro"
+date: today
+
+format:
+  html:
+    toc: true
+    toc-depth: 4
+    toc-location: left
+    embed-resources: true
+    code-fold: false
+    link-external-newwindow: true
+
+execute:
+  warning: false
+  
+from: markdown+emoji
+reference-location: margin
+citation-location: margin
+---
+
+What is the core concept(s) or insight(s) into the data that you believe the visualization communicates? If you choose to include animation then explain why animation helps. If you build an app then explain your choice of widgets and what about the data it help users understand.
+
+Students must find a dataset or construct a dataset from various data sources to visualize. Students are free to pick any topic, but must ensure that their data is sufficiently complex to build useful visualizations. Remember that you should provide a data citation and that we expect students to turn in their dataset(s) as part of their project.
