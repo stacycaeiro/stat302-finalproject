@@ -1,0 +1,84 @@
+---
+title: "Redlining and Socioeconomic Outcomes Dashboard: Memo"
+subtitle: "STAT 302: Data Visualization Final Project"
+author: "Stacy Caeiro"
+pagetitle: "Final Project Stacy Caeiro"
+date: today
+
+format:
+  html:
+    toc: true
+    toc-depth: 4
+    toc-location: left
+    embed-resources: true
+    code-fold: false
+    link-external-newwindow: true
+
+execute:
+  warning: false
+  
+from: markdown+emoji
+reference-location: margin
+citation-location: margin
+---
+::: {.callout-tip icon=false}
+
+## Github Repo Link
+
+[Final-Project-GitHub-Link](https://github.com/stacycaeiro/stat302-finalproject.git)
+
+:::
+
+## Introduction
+
+The purpose of my Shiny app is to understand & demonstrate how the racial composition and historic redlining of Chicago neighborhoods impact residents’ socioeconomic outcomes. Redlining is the practice of mortgage loaners denying loans to an applicant due to the race of the applicant and/or the racial composition of applicant’s neighbhorhood (The Editors of Encyclopaedia Britannica, 2014). 
+
+## Data Overview 
+
+I joined two datasets: one that contained data about neighborhood loan risk ratings and one that contained data on various health and economic outcomes of Chicago residents. 
+
+The first dataset I used is the [Home Owner Loan Corporation (HOLC) neighborhood ratings mapped to 2020 census tracks](https://data.diversitydatakids.org/dataset/holc_census_tracts-home-owner-loan-corporation--holc--neighborhood-grades-for-us-census-tracts/resource/402d2eb0-c096-48d3-bf76-4af66f80953d) dataset from [Diversity Data Kids](https://www.diversitydatakids.org/). 
+In the 1930s, HOLC assigned mortgage security risk ratings to neighborhoods partially based on their racial and ethnic makeup. The ratings ranged from A-D, with A = “best”, B = “still desirable”, C = “definitely declining”, and D = “hazardous”. This dataset maps these ratings to 2020 census tracts to showcase which neighborhoods have a history of redlining (Data Diversity Kids, 2023).
+
+Then, I used the [Chicago Health Atlas](https://chicagohealthatlas.org/) dataset to act as a measure of socio-economic outcomes. The Chicago Health Atlas is a partnership between the Chicago Department of Public Health and the PHAME center at UIC that displays a variety of health and socioeconomic related data over time and across different neighborhoods in Chicago (Chicago Health Atlas, 2023). These factors are collected from a variety of different surveys, but the data is all connected through a shared census tract variable. 
+
+## Dashboard Features 
+Overall my dashboard consists of a select button widget of various socioeconomic indicators,
+a boxplot that plots the relationship between these indicators and neighborhood loan risk
+rating, a scatterplot that plots the relationship between these indicators and the percent of white residents in a neighborhood, and a card that displays an explanation of each indicator and the survey it is sourced from within the Chicago Health Atlas dataset. 
+
+### Select Button Widget
+
+To begin, I included a select button widget in my dashboard so the user has the option
+to explore different socioeconomic outcomes. I chose the outcomes severe rent burden rate,
+college graduation rate, poverty rate, food insecurity rate, and chronic obstructive 
+pulmonary disease rate in order to display how a legacy of redlining can impact a 
+wide range of factors. 
+
+### Boxplot 
+Then, I included a boxplot that shows the relationship between the above indicators with neighborhood loan risk rating. The plot is interactive, so whatever option is selected is 
+what appears on the plot. I included this boxplot to showcase how these factors vary 
+based on the neighborhood's history of redlining. 
+
+### Scatterplot
+Additionally, I included an interactive scatterplot that shows the relationship between the above indicators with the percentange of White residents in a neighborhood. Since the neighborhood loan risk ratings were established based on the racial composition of the neighborhood, I included this graphic to showcase how the legacy of this racial divide is correlated with negative socioeconomic outcomes as well. 
+
+### Text Card
+Finally, I included a card of interactive text that displays the description and source
+of the user-selected indicator. These descriptions and sources were included in the Chicago
+Health Atlas dataset codebook. I included this so the user could understand what indicator is
+being displayed and where the source of the data is from, since the Chicago Health Atlas contains data from multiple surveys. 
+
+## Core Insight 
+The insight that I am trying to display to the user is that a legacy of redlining in a neighborhood is associated with worse socioeconomic outcomes for Chicago residents. My goal is for the boxplot to demonstrate the impact of a neighborhood having a worse loan risk rating on socioeconomic outcomes, displaying the history of redlining in a neighbhorhood. Furthermore,
+my goal is for the scatterplot is to showcase that the racial composition of a neighborhood is also correlated with worse outcomes, displaying that the history of redlining still impacts the 
+racial composition of a neighborhood today. Finally, I titled my dashboard to Legacy of Neighborhood Redlining Associated with Negative Socioeconomic Outcomes" to make my 
+message clear to the user. 
+
+## References
+Chicago Health Atlas. (2023). Chicago Health Atlas. [Chicagohealthatlas.org](Chicagohealthatlas.org) [https://chicagohealthatlas.org/Data](https://chicagohealthatlas.org/Data)
+
+Diversity Kids. (2023, February 15). Home Owner Loan Corporation (HOLC) neighborhood grades for US census tracts - CKAN. [Data.diversitydatakids.org.](Data.diversitydatakids.org) [https://data.diversitydatakids.org/dataset/holc_census_tracts-home-owner-loan-corporation–holc–neighborhood-grades-for-us-census-tracts](https://data.diversitydatakids.org/dataset/holc_census_tracts-home-owner-loan-corporation–holc–neighborhood-grades-for-us-census-tracts)
+
+The Editors of Encyclopaedia Britannica. (2014, September 11). Redlining | Racial Discrimination. Encyclopedia Britannica. [https://www.britannica.com/topic/redlining](https://www.britannica.com/topic/redlining)
+
