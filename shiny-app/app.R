@@ -22,7 +22,7 @@ hh_data <-
     )
   ))
 
-caption_data <- read_csv(here("data/chicago_health_atlas_codebook.csv"))
+caption_data <- read_csv(here("shiny-app/shiny-data/chicago_health_atlas_codebook.csv"))
 
 # Define UI for application that draws a histogram
 ui <- page_sidebar(
