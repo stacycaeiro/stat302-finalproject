@@ -3,7 +3,7 @@
 Final project for STAT 302 Data Visualization at Northwestern University. 
 This is a Shiny dashboard that displays the impact of historic redlining on socioecomic outcomes in Chicago. 
 
-## ShinyAppsIO Link: 
+## Link to View Dashboard On shinyapps.io: 
 http://tdj04p-stacy-caeiro.shinyapps.io/redlining-dashboard
 
 ## What's In This Repo?
